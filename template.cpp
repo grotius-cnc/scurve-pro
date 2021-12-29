@@ -144,9 +144,9 @@ struct scurve{
 void run()
 {
     scurve <double>s;
-    s.am=ui->doubleSpinBox_acceleration->value();
-    s.gain=ui->doubleSpinBox_gain->value();
-    s.vtot=ui->doubleSpinBox_velocity_end->value();
+    s.am=2;
+    s.gain=4;
+    s.vtot=8;
     s.init();
     for(double t=0; t<s.ct; t+=0.01){
 
