@@ -48,5 +48,6 @@ The code is using a c++ template [template<typename T>] structure [struct] with 
         Velocity factor improvment [v3/vl]    : 1.600000
 
 Some of the complexity for a acc curve.
+      
 https://user-images.githubusercontent.com/44880102/147859112-cc559b17-c0e4-4dc5-b0e1-786a22b8dc90.mp4
 
