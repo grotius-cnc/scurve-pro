@@ -46,6 +46,10 @@ The code is using a c++ template [template<typename T>] structure [struct] with 
         Efficienty factor [scurve with lineair transition] versus [normal scurve]
         Displacement factor improvment [s3/sl]: 1.600000
         Velocity factor improvment [v3/vl]    : 1.600000
+      
+Video of template_2:
+      
+https://user-images.githubusercontent.com/44880102/147877651-28261165-645f-4655-a0b8-9285be7c446f.mp4
 
-Some of the complexity for a acc curve.
+
       
