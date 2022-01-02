@@ -1,4 +1,5 @@
 //! Traditional lineair curve.
+//! Fully funtional, curve up, curve down.
 
 #define print(x) std::cout<<std::fixed<<#x<<": "<<x<<" ";
 #define end std::cout<<std::endl;
