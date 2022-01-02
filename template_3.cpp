@@ -1,4 +1,4 @@
-//! Working scurve, type forward, with gain 0-100%
+//! Forward and inverted backward Scurve algo, using: gain 0-100%
 
 //! Inputs:
 //! gain=curve power.
