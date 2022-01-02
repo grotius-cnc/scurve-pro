@@ -1,5 +1,4 @@
 //! Traditional lineair curve.
-//! Including acc & dcc solutions.
 
 #define print(x) std::cout<<std::fixed<<#x<<": "<<x<<" ";
 #define end std::cout<<std::endl;
@@ -39,8 +38,9 @@ struct TR{
         //! Curve down algo.
         if(ve<vo && vs>0 && s>0){
 
-            //! Limits curve up.
+            //! Limits
             if(vs>vo){vs=vo;}
+            if(ve>vs){ve=vs;}
 
             t1=(vo-ve)/a;
             s1=vo*t1 +0.5*a*(t1*t1);
@@ -102,7 +102,7 @@ struct TR{
         //! Curve up algo.
         if(ve>=vo && vs>0 && s>0){
 
-            //! Limits curve up.
+            //! Limits.
             if(ve>vs){ve=vs;}
 
             t1=(ve-vo)/a;
