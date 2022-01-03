@@ -1,5 +1,26 @@
-//! Scurve inplementaion with traditional lineair curve overlay.
-//! Scurve forward, backward ok. This looks like a full working gcode implementation.
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
+#include "iostream"
+
+
+#define print(x); std::cout<<std::fixed<<#x<<": "<<x<<" ";
+#define end; std::cout<<std::endl;
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+    OpencascadeWidget = new Opencascade(this);
+    ui->gridLayout_opencascade->addWidget(OpencascadeWidget);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
 
 std::vector<gp_Pnt> pvec_v, pvec_s, pvec_a;
 std::vector<gp_Pnt> pvec_sc_v, pvec_sc_s, pvec_sc_a;
@@ -313,6 +334,7 @@ Result<T> motion(T s, T vo, T ve, T vs, T a, T at_time, T gain){
         s2=s-(s1+s3);
         t2=s2/vs;
 
+        bool prompt_new_ve=0;
         if(t2<0){ //! Ve can not be reached. Set new ve based on s.
 
             ve=sqrt((vo*vo) + 2*-a*s);
@@ -324,6 +346,8 @@ Result<T> motion(T s, T vo, T ve, T vs, T a, T at_time, T gain){
             t3=0;
             s2=0;
             s3=0;
+
+            prompt_new_ve=1;
         }
 
         v1=vo - a*t1;
@@ -336,6 +360,15 @@ Result<T> motion(T s, T vo, T ve, T vs, T a, T at_time, T gain){
             sr=abs(vo*t + 0.5*-a*(t*t));
             ar=-a;
 
+            if(prompt_new_ve){
+                 r=scurve_bck(gain,a,vo,ve,t);
+                 r.vr=vr;
+                 r.sr=sr;
+                 r.ar=ar;
+                 r.ct=ct;
+                 r.cs=cs;
+                 return r;
+            }
             r=scurve_bck(gain,a,vo,vs,t);
             r.vr=vr;
             r.sr=sr;
@@ -389,6 +422,7 @@ Result<T> motion(T s, T vo, T ve, T vs, T a, T at_time, T gain){
         t1=(ve-vo)/a;
         s1=vo*t1 +0.5*a*(t1*t1);
 
+        bool prompt_new_ve=0;
         if(s1>s){ //! Ve can not be reached! Set new ve based on s.
             t1=sqrt(s/(0.5*a));
             ve=vo+a*t1;
@@ -400,7 +434,7 @@ Result<T> motion(T s, T vo, T ve, T vs, T a, T at_time, T gain){
             sr=0.5*a*(t*t);
             ar=a;
 
-            return r;
+            prompt_new_ve=1;
         }
 
         //! Sample to fit.
@@ -438,13 +472,22 @@ Result<T> motion(T s, T vo, T ve, T vs, T a, T at_time, T gain){
             sr=vo*t + 0.5*a*(t*t);
             ar=a;
 
+            if(prompt_new_ve){
+                r=scurve_fwd(gain,a,vo,ve,t);
+                r.vr=vr;
+                r.sr=sr;
+                r.ar=ar;
+                r.ct=ct;
+                r.cs=cs;
+                return r;
+            }
+
             r=scurve_fwd(gain,a,vo,vs,t);
             r.vr=vr;
             r.sr=sr;
             r.ar=ar;
             r.ct=ct;
             r.cs=cs;
-
             return r;
         }
         if(t>=t1 &&t<=t1+t2){ //! Period 2.
@@ -463,7 +506,6 @@ Result<T> motion(T s, T vo, T ve, T vs, T a, T at_time, T gain){
             r.ar=ar;
             r.ct=ct;
             r.cs=cs;
-
             return r;
         }
         if(t>t1+t2){ //! Period 3.
@@ -482,11 +524,6 @@ Result<T> motion(T s, T vo, T ve, T vs, T a, T at_time, T gain){
             r.ar=ar;
             r.ct=ct;
             r.cs=cs;
-
-            std::cout<<"displacment lineair curve:"<<r.sr<<std::endl;
-            std::cout<<"displacment scurve:"<<r.sc_sr<<std::endl;
-            //! When gain < 100% curve time is different.
-
             return r;
         }
     }
@@ -625,3 +662,6 @@ void MainWindow::draw_result(){
     pvec_sc_s.clear();
     pvec_sc_a.clear();
 }
+
+
+
