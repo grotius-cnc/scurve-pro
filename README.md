@@ -14,12 +14,7 @@ Picture of template_5:
 
 ![scurve](https://user-images.githubusercontent.com/44880102/147933136-169aa8c8-93e9-4b6c-9b8c-ea3feeb12634.jpg)
       
-Video of template_2:
-      
-https://user-images.githubusercontent.com/44880102/147877651-28261165-645f-4655-a0b8-9285be7c446f.mp4
-
-
-Video of template_4:
+Video of ~/scurve_gui/cpp_templates/template_4:
 
 https://user-images.githubusercontent.com/44880102/147923294-b816f551-958d-4547-b4b3-20e7d2e0536f.mp4
 
