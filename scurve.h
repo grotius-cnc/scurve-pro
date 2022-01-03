@@ -28,7 +28,7 @@ class Scurve
 public:
     Scurve();
 
-private:
+public:
     //! gain=curve power.
     //! am=acceleration a.
     //! vo=velocity begin.
@@ -45,7 +45,6 @@ private:
     template<typename T>
     Result<T> scurve_bck(T gain, T am, T vo, T ve, T at_time);
 
-public:
     //! s=displacement.
     //! vo=velocity begin.
     //! ve=velocity end.
