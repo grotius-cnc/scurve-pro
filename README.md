@@ -9,11 +9,12 @@ A lower gain value will reduce machining time.
 
 The effiecienty of this implementation relies on the acceleration stage time[t] wich is 2*max acceleration.
 
-### Specs
+### Capabilities
 
-This algo is capable of calculating trajectory's. It can output several different solutions depending on the trajectory input values.
-When a velocity end can not be reached by the displacement input value, a new velocity end value is calculated.
-If a velocity max value can not be reached during a run because of a short pathlenght. The curves are sampled to fit the trajectory.
+1. This algo is capable of calculating trajectory's. 
+2. It can output several different solutions depending on the trajectory input values.
+3. When a velocity end can not be reached by the displacement input value, a new velocity end value is calculated.
+4. If a velocity max value can not be reached during a run because of a short pathlenght. The curves are sampled to fit the trajectory.
 
 ### Usage
                //! Header only
