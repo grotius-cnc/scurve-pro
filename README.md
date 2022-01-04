@@ -1,4 +1,4 @@
-# Scurve-pro
+### Scurve-pro
 An improved scurve algoritme with lineair transition stage.
 Changed to header only library.
 
@@ -11,7 +11,7 @@ A lower gain value will reduce machining time.
 The effiecienty of this implementation relies on the acceleration stage time[t] wich is 2*max acceleration.
 
 
-# Code
+### Code
 
                #include "scurve.h"
                scurve_pro::Sc_Result r;
@@ -34,13 +34,13 @@ The effiecienty of this implementation relies on the acceleration stage time[t] 
                at_time+=0.001;
                double distancetogo=res.tr_cs-res.sc_sr;
         
-# Picture 
+### Picture 
 
 template_5:
 
 ![scurve](https://user-images.githubusercontent.com/44880102/147933136-169aa8c8-93e9-4b6c-9b8c-ea3feeb12634.jpg)
 
-# Video 
+### Video 
 
 Video of ~/scurve_gui/cpp_templates/template_4:
 
