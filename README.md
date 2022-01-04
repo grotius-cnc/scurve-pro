@@ -1,6 +1,5 @@
 ### Scurve-pro
 An improved scurve algoritme with lineair transition stage.
-Changed to header only library.
 
 [![scurve-pro - bring your machine to the g-force limits](https://img.shields.io/static/v1?label=scurve-pro&message=bring+your+machine+to+the+g-force+limits&color=blue)](https://) [![powered by - linux](https://img.shields.io/static/v1?label=powered+by&message=linux&color=red)](https://) [![code - c++ template](https://img.shields.io/static/v1?label=code&message=c%2B%2B+template&color=green)](https://) [![provided by - skynet cyberdyne](https://img.shields.io/static/v1?label=provided+by&message=skynet+cyberdyne&color=blue)](https://)
      
@@ -17,7 +16,7 @@ When a velocity end can not be reached by the displacement input value, a new ve
 If a velocity max value can not be reached during a run because of a short pathlenght. The curves are sampled to fit the trajectory.
 
 ### Usage
-
+               //! Header only
                #include "scurve.h"
                
                //! Result struct.
@@ -49,14 +48,22 @@ When user changes max velocity during a traject run. You have to realize that a 
      2. The end velocity can stay the same value.
      3. The pathlenght has to be changed from currrent position to end position, in fact a new distance to go [dtg].
 
+### Reverse engineering strategy
+
+In the ~/gui dir, the template_x files will show how the algoritme is evolved step by step.
+The difficulty of this algo is solved by making a new strategy :
+
+     1. Maka a traditional lineair algoritme including all curve output scenario's.
+     2. Apply the conventional scurve algo to 1. This is a scurve algo without lineair transition period.
+     3. Edit 2 to a scurve algorimte including lineair transition and gian. Time periods are differs from 1 & 2.
         
-### Picture 
+### Picture section 
 
 template_5:
 
 ![scurve](https://user-images.githubusercontent.com/44880102/147933136-169aa8c8-93e9-4b6c-9b8c-ea3feeb12634.jpg)
 
-### Video 
+### Video section
 
 Video of ~/scurve_gui/cpp_templates/template_4:
 
