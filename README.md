@@ -48,11 +48,12 @@ Video of ~/scurve_gui/cpp_templates/template_4:
 
 https://user-images.githubusercontent.com/44880102/147923294-b816f551-958d-4547-b4b3-20e7d2e0536f.mp4
 
+
 Hal-core performing a runtest with scurve-pro.
 
-The normal scurve alto gives a traject time of 4 sec.
-When 50% gain is used, traject time reduces to 3.5 sec.
-When 1% gain is used, traject time reduces to 3 sec.
+          gain:100%  sec:4      //! This is the full scurve algo without lineair stage.
+          gain:50%   sec:3.5
+          gain:1$    sec:3
 
 https://user-images.githubusercontent.com/44880102/148067684-3e63a697-efc1-45e7-94e2-d2f4879d0f6e.mp4
 
