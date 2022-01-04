@@ -47,7 +47,7 @@ When user changes max velocity during a traject run. You have to realize that a 
 
      1. The new calculation has a velocity begin of your current velocity.
      2. The end velocity can stay the same value.
-     3. The pathlenght has to be changed from currrent position to end position, in fact a new distance to go [dtg].
+     3. The pathlenght has to be changed into [currrent position-end position], like a new distance to go [dtg]. 
 
 ### Reverse engineering strategy
 
