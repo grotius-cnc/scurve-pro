@@ -14,24 +14,26 @@ The effiecienty of this implementation relies on the acceleration stage time[t] 
 ### Code
 
                #include "scurve.h"
-               scurve_pro::Sc_Result r;
+               
                //! Result struct.
-               double s=0, vo=0, ve=0, vs=0, a=0, gain=0;
+               scurve_pro::Sc_Result r;
+
                //! Displacement.
-               s=100;
+               double s=100;
                //! Velocity begin.
-               vo=0;
+               double vo=0;
                //! Velocity end.
-               ve=0;
+               double ve=0;
                //! Velocity max.
-               vs=10;
+               double vs=10;
                //! Acceleration.
-               a=2;
+               double a=2;
                //! Gain 1-100%.
-               gain=80;
+               double gain=80;
+               //! Request at timestamp.
+               double at_time=0.001;
 
                r=scurve_pro().motion(s, vo, ve, vs, a, at_time, gain);
-               at_time+=0.001;
                double distancetogo=res.tr_cs-res.sc_sr;
         
 ### Picture 
