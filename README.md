@@ -54,9 +54,9 @@ When user changes max velocity during a traject run. You have to realize that a 
 In the ~/gui dir, the template_x files will show how the algoritme is evolved step by step.
 The difficulty of coding this algo is solved by making the following structured step by step strategy :
 
-     1. Maka a traditional lineair algoritme including all curve output scenario's.
-     2. Apply the conventional scurve algo to 1. This is a scurve algo without lineair transition period.
-     3. Edit 2 to a scurve algorimte including lineair transition stage and curve power [gain].
+     1. Code a traditional lineair algoritme including all curve output scenario's.
+     2. Apply the conventional scurve algo to step 1. This is a scurve algo without lineair transition period.
+     3. Edit 2 to a scurve algoritme including lineair transition stage and curve power [gain]. Then clean code from step 1 & 2.
         
 ### Picture section 
 
