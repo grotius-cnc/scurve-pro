@@ -51,9 +51,9 @@ https://user-images.githubusercontent.com/44880102/147923294-b816f551-958d-4547-
 
 Hal-core performing a runtest with scurve-pro.
 
-          gain:100%  sec:4      //! This is the full scurve algo without lineair stage.
-          gain:50%   sec:3.5
-          gain:1$    sec:3
+          gain: 100%   traject time sec: 4        //! This is the full scurve algo without lineair stage.
+          gain: 50 %   traject time sec: 3.5      //! 12.5 % faster
+          gain: 1  %   traject time sec: 3        //! 25   % faster.     
 
 https://user-images.githubusercontent.com/44880102/148067684-3e63a697-efc1-45e7-94e2-d2f4879d0f6e.mp4
 
