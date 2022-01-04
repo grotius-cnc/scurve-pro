@@ -10,8 +10,13 @@ A lower gain value will reduce machining time.
 
 The effiecienty of this implementation relies on the acceleration stage time[t] wich is 2*max acceleration.
 
+### Specs
 
-### Code
+This algo is capable of calculating trajectory's. It can output several different solutions depending on the trajectory input values.
+When a velocity end can not be reached by the displacement input value, a new velocity end value is calculated.
+If a velocity max value can not be reached during a run because of a short pathlenght. The curves are sampled to fit the trajectory.
+
+### Usage
 
                #include "scurve.h"
                
@@ -35,6 +40,15 @@ The effiecienty of this implementation relies on the acceleration stage time[t] 
 
                r=scurve_pro().motion(s, vo, ve, vs, a, at_time, gain);
                double distancetogo=res.tr_cs-res.sc_sr;
+        
+### Things to know
+
+When user changes max velocity during a traject run. You have to realize that a new calculation is needed to avoid any machine shock's
+
+     1. The new calculation has a velocity begin of your current velocity.
+     2. The end velocity can stay the same value.
+     3. The pathlenght has to be changed from currrent position to end position, in fact a new distance to go [dtg].
+
         
 ### Picture 
 
