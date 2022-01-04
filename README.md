@@ -56,7 +56,7 @@ The difficulty of coding this algo is solved by making the following structured 
 
      1. Maka a traditional lineair algoritme including all curve output scenario's.
      2. Apply the conventional scurve algo to 1. This is a scurve algo without lineair transition period.
-     3. Edit 2 to a scurve algorimte including lineair transition and gian. Time periods are differs from 1 & 2.
+     3. Edit 2 to a scurve algorimte including lineair transition stage and curve power [gain].
         
 ### Picture section 
 
