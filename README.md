@@ -1,6 +1,6 @@
-# scurve-pro
+# Scurve-pro
 An improved scurve algoritme with lineair transition stage.
-
+Changed to header only library.
 
 [![scurve-pro - bring your machine to the g-force limits](https://img.shields.io/static/v1?label=scurve-pro&message=bring+your+machine+to+the+g-force+limits&color=blue)](https://) [![powered by - linux](https://img.shields.io/static/v1?label=powered+by&message=linux&color=red)](https://) [![code - c++ template](https://img.shields.io/static/v1?label=code&message=c%2B%2B+template&color=green)](https://) [![provided by - skynet cyberdyne](https://img.shields.io/static/v1?label=provided+by&message=skynet+cyberdyne&color=blue)](https://)
      
@@ -10,16 +10,43 @@ A lower gain value will reduce machining time.
 
 The effiecienty of this implementation relies on the acceleration stage time[t] wich is 2*max acceleration.
 
-Picture of template_5:
+
+# Code
+
+               #include "scurve.h"
+               scurve_pro::Sc_Result r;
+               //! Result struct.
+               double s=0, vo=0, ve=0, vs=0, a=0, gain=0;
+               //! Displacement.
+               s=100;
+               //! Velocity begin.
+               vo=0;
+               //! Velocity end.
+               ve=0;
+               //! Velocity max.
+               vs=10;
+               //! Acceleration.
+               a=2;
+               //! Gain 1-100%.
+               gain=80;
+
+               r=scurve_pro().motion(s, vo, ve, vs, a, at_time, gain);
+               at_time+=0.001;
+               double distancetogo=res.tr_cs-res.sc_sr;
+        
+# Picture 
+
+template_5:
 
 ![scurve](https://user-images.githubusercontent.com/44880102/147933136-169aa8c8-93e9-4b6c-9b8c-ea3feeb12634.jpg)
-      
+
+# Video 
+
 Video of ~/scurve_gui/cpp_templates/template_4:
 
 https://user-images.githubusercontent.com/44880102/147923294-b816f551-958d-4547-b4b3-20e7d2e0536f.mp4
 
-
-Video Hal-core performing a runtest with scurve-pro.
+Hal-core performing a runtest with scurve-pro.
 
 The normal scurve alto gives a traject time of 4 sec.
 When 50% gain is used, traject time reduces to 3.5 sec.
