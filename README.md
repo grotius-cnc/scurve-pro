@@ -52,7 +52,7 @@ When user changes max velocity during a traject run. You have to realize that a 
 ### Reverse engineering strategy
 
 In the ~/gui dir, the template_x files will show how the algoritme is evolved step by step.
-The difficulty of this algo is solved by making a new strategy :
+The difficulty of coding this algo is solved by making the following structured step by step strategy :
 
      1. Maka a traditional lineair algoritme including all curve output scenario's.
      2. Apply the conventional scurve algo to 1. This is a scurve algo without lineair transition period.
