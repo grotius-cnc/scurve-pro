@@ -1,5 +1,5 @@
-#ifndef SCURVE_H
-#define SCURVE_H
+#ifndef SCURVE_PRO_H
+#define SCURVE_PRO_H
 
 //!
 //! An improved scurve algoritme using gain 1-100% to
@@ -7,9 +7,9 @@
 //!
 //! Made by Skynet Cyberdyne 03-01-2022.
 //! Licence Gpl2.
-//! 
+//!
 //! 04-01-2022 Added motion_stop function.
-//! 
+//!
 
 #include <iostream>
 #include <math.h>
@@ -508,4 +508,4 @@ public:
     }
 };
 
-#endif // SCURVE_H
+#endif // SCURVE_PRO_H
