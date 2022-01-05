@@ -2,6 +2,8 @@
 An improved scurve algoritme with lineair transition stage and curve power indicator.
 
 [![scurve-pro - bring your machine to the g-force limits](https://img.shields.io/static/v1?label=scurve-pro&message=bring+your+machine+to+the+g-force+limits&color=blue)](https://) [![powered by - linux](https://img.shields.io/static/v1?label=powered+by&message=linux&color=red)](https://) [![code - c++ template](https://img.shields.io/static/v1?label=code&message=c%2B%2B+template&color=green)](https://) [![provided by - skynet cyberdyne](https://img.shields.io/static/v1?label=provided+by&message=skynet+cyberdyne&color=blue)](https://)
+
+[![Github All Releases](https://img.shields.io/github/downloads/grotius-cnc/scurve-pro/total.svg)]()
      
 This algoritme is using a "gain" value to optimize the scurve displacement and velocity results.
 
