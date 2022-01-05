@@ -296,7 +296,7 @@ Result<T> motion(T s, T vo, T ve, T vs, T a, T at_time, T gain){
 
 
     //! Curve steady algo.
-    if(vo==ve && vo==vs){
+    if(vo==vs && vs==ve){
         r.sc_vr=ve;
         r.tr_ct=s/ve;
         r.tr_cs=s;
@@ -306,7 +306,7 @@ Result<T> motion(T s, T vo, T ve, T vs, T a, T at_time, T gain){
     }
 
     //! Curve down algo.
-    if(ve<vo && vs>0 && s>0){
+    if(vo>=vs && vs>=ve && vs>0 && s>0){
 
         //! Limits
         if(vs>vo){vs=vo;}
@@ -390,7 +390,7 @@ Result<T> motion(T s, T vo, T ve, T vs, T a, T at_time, T gain){
     }
 
     //! Curve up algo.
-    if(ve>=vo && vs>0 && s>0){
+    if(vo<=vs && vs>0 && s>0){
 
         //! Limits.
         if(ve>vs){ve=vs;}
@@ -436,7 +436,9 @@ Result<T> motion(T s, T vo, T ve, T vs, T a, T at_time, T gain){
             if(s1+s3<=s){
                 break;
             } else {
-                vs-=0.01;
+                vs-=0.1*vs;         //! Important value. It reduces mavel by input value until curves fit.
+                                    //! The reduce value has great impact on function cycle time.
+                                    //! 0.1 = 10% velocity recude to find the fit.
             }
         }
 

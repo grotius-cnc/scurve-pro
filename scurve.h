@@ -33,7 +33,7 @@ public:
     //!     1. It run's to a very low velocity.
     //!     2. When velocity is very low, it stops motion.
     //!
-    //! Input current traject values [r]
+    //! Input current traject result values [r]
     //! s=displacment
     //! vc=velocity current
     //! ve=velocity end
@@ -325,7 +325,8 @@ public:
         }
 
         //! Curve down algo.
-        if(ve<vo && vs>0 && s>0){
+        // if(ve<vo && vs>0 && s>0){
+         if(vo>=vs && vs>=ve && vs>0 && s>0){
 
             //! Limits
             if(vs>vo){vs=vo;}
@@ -408,7 +409,8 @@ public:
         }
 
         //! Curve up algo.
-        if(ve>=vo && vs>0 && s>0){
+        //if(ve>=vo && vs>0 && s>0){
+        if(vo<=vs && vs>0 && s>0){
 
             //! Limits.
             if(ve>vs){ve=vs;}
