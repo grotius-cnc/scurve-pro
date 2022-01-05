@@ -1,5 +1,3 @@
-![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=grotius-cnc&show_icons=true)
-
 ### Scurve-pro
 An improved scurve algoritme with lineair transition stage and curve power indicator.
 
