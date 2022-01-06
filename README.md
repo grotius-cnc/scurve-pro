@@ -10,12 +10,12 @@ There are several types of curve's to use:
           scurve_pro_orig.cpp
           scurve_pro_orig.h
           
-2. Template class optimized scurve with gain input [curve power]
+2. Template class optimized scurve with lineair transition stage & gain input [curve power]
 
           scurve_pro_gain.cpp
           scurve_pro_gain.h
            
-3. Header only optimized scurve with gain input [curve power].
+3. Header only optimized scurve with with lineair transition stage & gain input [curve power].
 
           scurve.h  
 
