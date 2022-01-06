@@ -9,16 +9,16 @@ A lower gain value will reduce machining time.
 
 The effiecienty of this implementation relies on the acceleration stage time[t] wich is 2*max acceleration.
 
-Picture of template_5:
-
-![scurve](https://user-images.githubusercontent.com/44880102/147933136-169aa8c8-93e9-4b6c-9b8c-ea3feeb12634.jpg)
-      
-Video of template_2:
-      
-https://user-images.githubusercontent.com/44880102/147877651-28261165-645f-4655-a0b8-9285be7c446f.mp4
-
-
 Video of template_4 testing acc & dcc interupts:
 
 https://user-images.githubusercontent.com/44880102/148428147-78f2b0ea-c10e-4864-9f79-4a5ba2f59735.mp4
 
+Implemenation example :
+
+          scurve_pro_orig<double>::Result res;
+
+          res=scurve_pro_orig<double>().motion(s, vo, ve, vs, a, at_time, gain);
+
+          std::cout<<"curvel:"<<res.sc_vr<<std::endl;
+
+          at_time+=0.001;
