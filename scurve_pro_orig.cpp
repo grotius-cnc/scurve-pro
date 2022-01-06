@@ -7,7 +7,7 @@ scurve_pro_orig<T>::scurve_pro_orig()
 }
 
 //! Inputs:
-//! gain=curve power.
+//! gain=curve power. using gain=100
 //! am=acceleration a.
 //! vo=velocity begin.
 //! ve=velocity end.
@@ -20,7 +20,9 @@ scurve_pro_orig<T>::scurve_pro_orig()
 template<typename T>
 typename scurve_pro_orig<T>::Result scurve_pro_orig<T>::scurve_fwd(T gain, T am, T vo, T ve, T at_time){
     Result r;
-
+    
+    gain=100;
+    
     //! formula's lineair acceleration:
     //! v*v=(vo*vo) + 2*a*s, s=vo*t + 0.5*a*(t*t), t=sqrt(s*2/a) ,v=vo+a*t
     //! formula's lineair steady:
@@ -139,6 +141,8 @@ template<typename T>
 typename scurve_pro_orig<T>::Result scurve_pro_orig<T>::scurve_bck(T gain, T am, T vo, T ve, T at_time){
     Result r;
 
+    gain=100;
+    
     //! Invert vo,ve
     T vo_temp=vo;
     vo=ve;
@@ -265,6 +269,8 @@ typename scurve_pro_orig<T>::Result scurve_pro_orig<T>::motion(T s, T vo, T ve, 
     //! Scurve structure.
     Result r;
 
+    gain=100;
+    
     //! Traditional lineair curve
     T t1=0, t2=0, t3=0, s1=0, s2=0, s3=0, v1=0, ct=0, cs=0, vr=0, sr=0, ar=0;
     T t=at_time;
