@@ -79,3 +79,8 @@ Hal-core performing a runtest with scurve-pro.
 
 https://user-images.githubusercontent.com/44880102/148067684-3e63a697-efc1-45e7-94e2-d2f4879d0f6e.mp4
 
+
+Video of ~/scurve_gui/cpp_templates/template_4 testing acc, dcc interupts:
+
+https://user-images.githubusercontent.com/44880102/148427549-4f542331-af2d-496c-b4ba-ba7ecb074e57.mp4
+
